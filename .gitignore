@@ -1,0 +1,7 @@
+.env
+env/*
+credentials.txt
+keys/pwd.txt
+keys/API_KEY.txt
+# vs code files
+.vscode
