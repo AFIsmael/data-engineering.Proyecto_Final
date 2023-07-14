@@ -178,7 +178,7 @@ def cargar_data(exec_date):
     cur.execute("COMMIT")
     print('Proceso terminado')
     
-
+# Funcion de envio de reporte SMTP
 def reporte_SMTP(exec_date):
     print(f"Enviando reporte para la fecha: {exec_date}")
     date = datetime.strptime(exec_date, '%Y-%m-%d %H')
@@ -187,11 +187,11 @@ def reporte_SMTP(exec_date):
     try:
         x = smtplib.SMTP('smtp.gmail.com', 587)
         x.starttls()
-        x.login('arcefigueroaismael@gmail.com', 'htqfmbzgqpurjwew') # Cambia tu contraseña !!!!!!!!
+        x.login('arcefigueroaismael@gmail.com', 'htqfmbzgqpurjwew') # Contraseña vinculada al dispositivo, no importa su envio en el codigo!
         subject = 'Reporte diario cryptocurrency'
         message = 'Subject: {}\n\n'.format(subject)
         
-        for _, row in records.iterrows():
+        for _, row in records.iterrows(): #iteramos sobre los datos recolectados para armar el cuerpo del mensaje extrayendo los datos recopilados
             name = row['name']
             symbol = row['symbol']
             price = row['price']
