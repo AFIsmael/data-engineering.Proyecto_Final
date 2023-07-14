@@ -61,4 +61,4 @@ TASKS:
 ```bash
 ```
 
-![gmail](mail_reporte.png)
+![gmail](mail_reporte.PNG)
